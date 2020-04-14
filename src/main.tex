@@ -1,0 +1,45 @@
+\documentclass[uplatex]{jsreport}
+\usepackage[ipaex, unicode]{pxchfon}
+\usepackage{amsmath}
+
+\newtheorem{thm}{定理}
+\newtheorem{dfn}[thm]{定義}
+\newtheorem{lem}[thm]{補題}
+\newtheorem{prop}[thm]{命題}
+
+
+\title{代数幾何学まとめノート}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{可換環}
+\begin{dfn}
+アーベル群 A が（単位的）可換環であるとは、
+\textbf{積}と呼ばれる写像 $A \times A \to A$, $a, b \mapsto ab, \text{where}, a, b \in A$
+を備えており、以下の公理を満たすときをいう: \\
+
+任意の $a, b, c \in A$ について
+\begin{enumerate}
+    \item ab = ba
+    \item (ab)c = a(bc)
+    \item (a + b)c = ac + bc
+    \item 1a = a
+\end{enumerate}
+ここで、$1 \in a$ を $A$ の単位元という。
+\end{dfn}
+以降、単に環といったら単位的可換環のことを意味すると約束する。
+
+\begin{dfn}
+    環 $A$ から $B$ への写像 $\phi: A \to B$ が環準同型写像であるとは、次の性質を満たすときをいう：
+    \begin{enumerate}
+        \item $\phi(a + b) = \phi(a) + \phi(b)$
+        \item $\phi(ab) = \phi(a)\phi(b)$
+        \item $\phi(1) = 1$
+    \end{enumerate}
+\end{dfn}
+
+\end{document}
+
