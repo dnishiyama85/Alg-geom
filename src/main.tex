@@ -1,12 +1,17 @@
 \documentclass[uplatex]{jsreport}
 \usepackage[ipaex, unicode]{pxchfon}
 \usepackage{amsmath}
+\usepackage{amsfonts}
 
 \newtheorem{thm}{定理}
 \newtheorem{dfn}[thm]{定義}
 \newtheorem{lem}[thm]{補題}
 \newtheorem{prop}[thm]{命題}
 
+\newcommand{\mfa}{\mathfrak{a}}
+\newcommand{\mfb}{\mathfrak{b}}
+\newcommand{\mfp}{\mathfrak{p}}
+\newcommand{\mfq}{\mathfrak{q}}
 
 \title{代数幾何学まとめノート}
 \date{}
@@ -17,7 +22,7 @@
 
 \section{可換環}
 \begin{dfn}
-アーベル群 A が（単位的）可換環であるとは、
+アーベル群 A が（単位的）\textbf{可換環}であるとは、
 \textbf{積}と呼ばれる写像 $A \times A \to A$, $a, b \mapsto ab, \text{where}, a, b \in A$
 を備えており、以下の公理を満たすときをいう: \\
 
@@ -33,12 +38,32 @@
 以降、単に環といったら単位的可換環のことを意味すると約束する。
 
 \begin{dfn}
-    環 $A$ から $B$ への写像 $\phi: A \to B$ が環準同型写像であるとは、次の性質を満たすときをいう：
+    環 $A$ から $B$ への写像 $\phi: A \to B$ が\textbf{環準同型写像}であるとは、次の性質を満たすときをいう：
     \begin{enumerate}
         \item $\phi(a + b) = \phi(a) + \phi(b)$
         \item $\phi(ab) = \phi(a)\phi(b)$
         \item $\phi(1) = 1$
     \end{enumerate}
+\end{dfn}
+
+\begin{dfn}
+    環 $A$ の部分集合 $\mfa$ が\textbf{イデアル}であるとは、$\mfa$ が次の性質を満たすときをいう。
+    \begin{enumerate}
+        \item $\mfa$は加法に関して部分群である。すなわち
+        \begin{enumerate}
+            \item $0 \in \mfa$
+            \item $\forall a \in \mfa, -a \in \mfa$
+            \item $\forall a, \forall b \in \mfa$, $a + b \in \mfa$
+        \end{enumerate}
+        \item $\forall a \in \mfa, \forall x \in A$, $ax \in A$.
+    \end{enumerate}
+\end{dfn}
+
+\begin{dfn}
+    環 $A$ のイデアル $\mfp$ が\textbf{素イデアル}であるとは、$\mfp$ が次の性質を満たすときをいう。
+    \[
+        p, q \in A \text{について、\ } pq \in \mfp \text{ならば} p \in \mfp \text{または} q \in \mfp.
+    \]
 \end{dfn}
 
 \end{document}
