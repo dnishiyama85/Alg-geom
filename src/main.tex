@@ -14,6 +14,11 @@
 \newcommand{\mfp}{\mathfrak{p}}
 \newcommand{\mfq}{\mathfrak{q}}
 
+\newcommand{\mcF}{\mathcal{F}}
+\newcommand{\mcG}{\mathcal{G}}
+\newcommand{\mcH}{\mathcal{H}}
+
+
 \title{代数幾何学まとめノート}
 \date{}
 
@@ -89,6 +94,36 @@ $C_K$ を $K/k$ の DVR すべてのなす集合とする。$C_K$の元を点と
     ただし $U$ には誘導位相を与え、開部分集合上の正則関数の概念を $C_K$ の場合から定める。
 \end{dfn}
 
+\section{層}
+
+\begin{dfn}
+    $X$ を位相空間とする。$X$ 上の\textbf{前層} $\mcF$とは以下のようなデータである。
+    \begin{enumerate}
+        \item $X$ の各開集合 $U$ に対してアーベル群 $\mcF(U)$ が定まっている。
+        \item $X$ の開集合 $U, V$ で、$V \subseteq U$ となるペアについてアーベル群の準同型写像
+        $\rho_{UV}: \mcF(U) \to \mcF(V)$ が定まっている。 これを\textbf{制限写像}と呼ぶ。
+    \end{enumerate}
+    ただしこれらは以下の条件を満たすものとする：
+    \begin{itemize}
+        \item 空集合 $\emptyset$ に対しては $\mcF(\emptyset) = 0$ (自明なアーベル群)。
+        \item $\rho_{UU}: \mcF(U) \to \mcF(U)$ は恒等写像。
+        \item $X$ の開集合 $W \subseteq V \subseteq U$に対して、$\rho_{UW} = \rho_{VW}\circ\rho_{UV}$.
+    \end{itemize}
+\end{dfn}
+
+$s \in \mcF(U)$ に対して $\rho_{UV}(s)$ を $s|_V$ と書くこともある。
+
+\begin{dfn}
+    位相空間$X$の上の前層$\mcF$がさらに次の条件を満たすとき$\mcF$を\textbf{層}という。
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item （局所性）$X$の任意の開集合$U$とその開被覆$\{V_i\}$に対して、
+              $s \in \mcF(U)$ がすべての $i$ について $s|_{V_i} = 0$ を満たすならば $s = 0$.
+        \item （貼り合わせ条件）各 $i$ について $s_i \in \mcF(V_i)$ があり、
+              $s_i|_{V_i \cap V_j} = s_j|_{V_i \cap V_j}$　を満たすならば、ある $s \in \mcF(U)$
+              が存在して、$s_i = s|_{V_i}$ となる。
+    \end{enumerate}
+\end{dfn}
 
 \end{document}
 
