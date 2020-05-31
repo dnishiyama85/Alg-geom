@@ -1,4 +1,4 @@
-\documentclass[uplatex]{jsreport}
+\documentclass[uplatex, 12pt]{jsreport}
 \usepackage[ipaex, unicode]{pxchfon}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -113,6 +113,12 @@ $C_K$ を $K/k$ の DVR すべてのなす集合とする。$C_K$の元を点と
 
 $s \in \mcF(U)$ に対して $\rho_{UV}(s)$ を $s|_V$ と書くこともある。
 
+\begin{dfn}{(層の茎と芽)\textcolor{red}{順極限の定義をする。もっとわかりやすく書く。}}
+    $\mcF$ を $X$ 上の前層とし、$P$ を $X$ 上の点とする。$\mcF$ の $P$ における\textbf{茎} $\mcF_P$ を、
+    $P$ を含む全ての開集合 $U$ に対する群 $\mcF(U)$ と制限写像 $\rho$ がなす順系に関する順極限と定義する。
+    茎 $\mcF_P$ の元を点 $P$ における $\mcF$ の切断の\textbf{芽}という。
+\end{dfn}
+
 \begin{dfn}
     位相空間$X$の上の前層$\mcF$がさらに次の条件を満たすとき$\mcF$を\textbf{層}という。
     \begin{enumerate}
@@ -123,6 +129,26 @@ $s \in \mcF(U)$ に対して $\rho_{UV}(s)$ を $s|_V$ と書くこともある�
               $s_i|_{V_i \cap V_j} = s_j|_{V_i \cap V_j}$　を満たすならば、ある $s \in \mcF(U)$
               が存在して、$s_i = s|_{V_i}$ となる。
     \end{enumerate}
+\end{dfn}
+
+\begin{dfn}{(前層に付随する層)}
+    $X$ 上の前層 $\mcF$ が与えられたときに、それから$X$上の層 $\mcF^+$ を構成することができる：
+
+    $X$ の各開集合 $U$ に対し、アーベル群 $\mcF^+(U)$ を次で定める。
+
+    \begin{enumerate}
+        \item $\mcF^+(U)$ は次のような関数 $s: U \to \bigcup_{P \in U} \mcF_P$ 全体の集合である。
+        (これがアーベル群をなすことは明らか。各点における茎$\mcF_P$がアーベル群なので各点ごとで和を考えればよい。)
+        \item ただし $s$ は以下の条件を満たすものとする：
+              \begin{itemize}
+                  \item 各点 $P \in U$ について $s(P) \in \mcF_P$.
+                  \item 各点 $P \in U$ について　$U$ に含まれる $P$ の開近傍 $V$ と
+                        $t \in \mcF(V)$ が存在して、$\forall Q \in V$ について
+                        $t$ の $Q$ における芽 $t_Q$ は $s(Q)$ に等しい。
+              \end{itemize}
+
+    \end{enumerate}
+
 \end{dfn}
 
 \end{document}
