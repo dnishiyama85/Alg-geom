@@ -26,6 +26,8 @@
 
 \maketitle
 
+\chapter{可換環}
+
 \section{可換環}
 \begin{dfn}
 アーベル群 A が（単位的）\textbf{可換環}であるとは、
@@ -94,7 +96,7 @@ $C_K$ を $K/k$ の DVR すべてのなす集合とする。$C_K$の元を点と
     ただし $U$ には誘導位相を与え、開部分集合上の正則関数の概念を $C_K$ の場合から定める。
 \end{dfn}
 
-\section{層}
+\chapter{層}
 
 \begin{dfn}
     $X$ を位相空間とする。$X$ 上の\textbf{前層} $\mcF$とは以下のようなデータである。
@@ -151,5 +153,33 @@ $s \in \mcF(U)$ に対して $\rho_{UV}(s)$ を $s|_V$ と書くこともある�
 
 \end{dfn}
 
+
+\chapter*{Appendix}
+
+\begin{dfn}{(写像の制限と延長)}
+    写像 $f:X \to Y$ と部分集合 $S \subseteq X$ が任意に与えられたとき、
+    $\forall s \in S, f|_S := f(s)$ と置くことにより定義される写像 $f|_S: S \to Y$ を
+    $f$ の $S$ への\textbf{制限}と呼ぶ。写像 $h$ の適当な制限が $f$ に一致するとき $h$ は
+     $f$ の\textbf{延長}または拡大、もしくは拡張であるという。
+\end{dfn}
+
+\begin{dfn}{(写像の貼り合わせ)}
+    $V_1, V_2, Y$ を集合、$U = V_1 \cup V_2$ とする。
+    写像 $f_1 : V_1 \to Y$, $f_2 : V_2 \to Y$ が与えられて、
+    \[
+        f_1|_{V_1 \cap V_2} = f_2|_{V_1 \cap V_2}
+    \]
+    を満たしているとする。このとき、写像 $f: U \to Y$ を
+    \[
+        \forall x \in U = V_1 \cup V_2, \ \ f(x) =
+        \begin{cases}
+            f_1(x) \ \ \ \ \text{if } x \in V_1 \\
+            f_2(x) \ \ \ \ \text{if } x \in V_2 \\
+        \end{cases}
+    \]
+    で定義すれば、これは well-defined な写像になる。このとき、$f_1$ と $f_2$ は貼り合わさって
+    写像 $f$ を定めるという。$f$ は $f_1$ の延長かつ$f_2$の延長になっている。
+    また、$f_1$ は $f$ の $V_1$への制限かつ $f_2$ は $f$ の $V_2$ への制限になっている。
+    \end{dfn}
 \end{document}
 
