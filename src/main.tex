@@ -1,8 +1,10 @@
-\documentclass[uplatex, 12pt]{jsreport}
+\documentclass[uplatex, 12pt, dvipdfmx]{jsreport}
 \usepackage[ipaex, unicode]{pxchfon}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{color}
+\usepackage{tikz}
 
 \newtheorem{thm}{定理}
 \newtheorem{dfn}[thm]{定義}
@@ -132,6 +134,25 @@ $s \in \mcF(U)$ に対して $\rho_{UV}(s)$ を $s|_V$ と書くこともある�
               が存在して、$s_i = s|_{V_i}$ となる。
     \end{enumerate}
 \end{dfn}
+
+
+\begin{dfn}{(前層の射)}
+    $\mcF$, $\mcG$ を $X$ 上の前層とするとき、それらの間の射 $\phi: \mcF \to \mcG$ とは
+    各開集合 $U \subset X$ に対するアーベル群の射 (= 準同型写像) $\phi(U): \mcF(U) \to \mcG(U)$ から
+    なるもので、各 $\phi(U)$ が制限写像と可換になるものである。
+
+    \begin{tikzpicture}[auto]
+        \node (FU) at (0, 1.5) {$\mcF(U)$}; \node (GU) at (2.2, 1.5) {$\mcG(U)$};
+        \node (FV) at (0, 0) {$\mcF(V)$};   \node (GV) at (2.2, 0) {$\mcG(V)$};
+        \node (F) at (1.1, 0.75) {\huge$\circlearrowright$};
+        \draw[->] (FU) to node {$\phi(U)$} (GU);
+        \draw[->] (FV) to node[swap] {$\phi(V)$} (GV);
+        \draw[->] (FU) to node[swap] {$\rho_{UV}$} (FV);
+        \draw[->] (GU) to node {$\rho'_{UV}$} (GV);
+    \end{tikzpicture}
+\end{dfn}
+
+
 
 \begin{dfn}{(前層に付随する層)}
     $X$ 上の前層 $\mcF$ が与えられたときに、それから$X$上の層 $\mcF^+$ を構成することができる：
